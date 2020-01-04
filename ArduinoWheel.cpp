@@ -8,6 +8,7 @@ float Vout = 0;
 float R1 = 2200;
 float R2 = 0;
 float buffer = 0;
+int buttonState = 0;
 
 void setup()
 {
@@ -18,8 +19,7 @@ void setup()
 void loop()
 {
   raw = analogRead(analogPin);
-  if (raw)
-  {
+  if (raw && buttonState == 0) {
     buffer = raw * Vin;
     Vout = (buffer) / 1024.0;
     buffer = (Vin / Vout) - 1;
@@ -30,43 +30,46 @@ void loop()
       Serial.println("VolUp");
       char test[] = "VolUp";
       BTserial.print(test);
-      BTserial.write('\r');
+      buttonState = 1;
     } else if (1600 <= R2 && R2 <= 1850) {
       Serial.println("VolDown ");
       char test[] = "VolDown";
       BTserial.print(test);
-      BTserial.write('\r');
-    } else if (3100 <= R2 && R2 <= 3400) {
-      Serial.println("Skip");
-      char test[] = "Skip";
-      BTserial.print(test);
-      BTserial.write('\r');
-    } else if (4300 <= R2 && R2 <= 4600) {
-      Serial.println("Prev");
-      char test[] = "Prev";
-      BTserial.print(test);
-      BTserial.write('\r');
+      buttonState = 1;
     } else if (1900 <= R2 && R2 <= 2100) {
       Serial.println("Play/Pause");
       char test[] = "Pause";
       BTserial.print(test);
-      BTserial.write('\r');
+      buttonState = 1;
     } else if (2400 <= R2 && R2 <= 2700) {
       Serial.println("Mute");
       char test[] = "Mute";
       BTserial.print(test);
-      BTserial.write('\r');
+      buttonState = 1;
+    } else if (3100 <= R2 && R2 <= 3400) {
+      Serial.println("Skip");
+      char test[] = "Skip";
+      BTserial.print(test);
+      buttonState = 1;
+    } else if (4300 <= R2 && R2 <= 4600) {
+      Serial.println("Prev");
+      char test[] = "Prev";
+      BTserial.print(test);
+      buttonState = 1;
     } else if (6700 <= R2 && R2 <= 8900) {
       Serial.println("Mode");
       char test[] = "Mode";
       BTserial.print(test);
-      BTserial.write('\r');
+      buttonState = 1;
     } else if (13000 <= R2 && R2 <= 16000) {
       Serial.println("Repeat");
       char test[] = "Repeat";
       BTserial.print(test);
-      BTserial.write('\r');
+      buttonState = 1;
     }
     delay(250);
+  } else if (buttonState == 1){
+      BTserial.write('\r');
+	  buttonState = 0;
   }
 }
