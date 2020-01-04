@@ -54,14 +54,6 @@ void loop()
 
     Serial.println(s);
             if (s == "VolUp") {
-                setResistance(1);
-                digitalWrite(vcc, HIGH);
-                digitalWrite(LED_BUILTIN, HIGH);
-                delay(100);
-                digitalWrite(LED_BUILTIN, LOW);
-                
-            }
-            else if (s == "VolDown") {
                 setResistance(2);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
@@ -69,15 +61,7 @@ void loop()
                 digitalWrite(LED_BUILTIN, LOW);
                 
             }
-            else if (s == "Skip") {
-                setResistance(3);
-                digitalWrite(vcc, HIGH);
-                digitalWrite(LED_BUILTIN, HIGH);
-                delay(100);
-                digitalWrite(LED_BUILTIN, LOW);
-                
-            }
-            else if (s == "Prev") {
+            else if (s == "VolDown") {
                 setResistance(4);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
@@ -85,23 +69,23 @@ void loop()
                 digitalWrite(LED_BUILTIN, LOW);
                 
             }
+            else if (s == "Skip") {
+                setResistance(6);
+                digitalWrite(vcc, HIGH);
+                digitalWrite(LED_BUILTIN, HIGH);
+                delay(100);
+                digitalWrite(LED_BUILTIN, LOW);
+                
+            }
+            else if (s == "Prev") {
+                setResistance(8);
+                digitalWrite(vcc, HIGH);
+                digitalWrite(LED_BUILTIN, HIGH);
+                delay(100);
+                digitalWrite(LED_BUILTIN, LOW);
+                
+            }
             else if (s == "Pause") {
-                setResistance(7);
-                digitalWrite(vcc, HIGH);
-                digitalWrite(LED_BUILTIN, HIGH);
-                delay(100);
-                digitalWrite(LED_BUILTIN, LOW);
-                
-            }
-            else if (s == "Mute") {
-                setResistance(15);
-                digitalWrite(vcc, HIGH);
-                digitalWrite(LED_BUILTIN, HIGH);
-                delay(100);
-                digitalWrite(LED_BUILTIN, LOW);
-                
-            }
-            else if (s == "Mode") {
                 setResistance(10);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
@@ -109,8 +93,24 @@ void loop()
                 digitalWrite(LED_BUILTIN, LOW);
                 
             }
+            else if (s == "Mute") {
+                setResistance(12);
+                digitalWrite(vcc, HIGH);
+                digitalWrite(LED_BUILTIN, HIGH);
+                delay(100);
+                digitalWrite(LED_BUILTIN, LOW);
+                
+            }
+            else if (s == "Mode") {
+                setResistance(14);
+                digitalWrite(vcc, HIGH);
+                digitalWrite(LED_BUILTIN, HIGH);
+                delay(100);
+                digitalWrite(LED_BUILTIN, LOW);
+                
+            }
             else if (s == "Repeat") {
-                setResistance(6);
+                setResistance(16);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
