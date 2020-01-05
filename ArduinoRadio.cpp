@@ -54,7 +54,7 @@ void loop()
 
     Serial.println(s);
             if (s == "VolUp") {
-                setResistance(2);
+                setResistance(1);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
@@ -62,7 +62,7 @@ void loop()
                 
             }
             else if (s == "VolDown") {
-                setResistance(4);
+                setResistance(2);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
@@ -70,7 +70,7 @@ void loop()
                 
             }
             else if (s == "Skip") {
-                setResistance(6);
+                setResistance(3);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
@@ -78,7 +78,7 @@ void loop()
                 
             }
             else if (s == "Prev") {
-                setResistance(8);
+                setResistance(4);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
@@ -86,7 +86,7 @@ void loop()
                 
             }
             else if (s == "Pause") {
-                setResistance(10);
+                setResistance(7);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
@@ -94,7 +94,7 @@ void loop()
                 
             }
             else if (s == "Mute") {
-                setResistance(12);
+                setResistance(15);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
@@ -102,7 +102,7 @@ void loop()
                 
             }
             else if (s == "Mode") {
-                setResistance(14);
+                setResistance(10);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
@@ -110,7 +110,7 @@ void loop()
                 
             }
             else if (s == "Repeat") {
-                setResistance(16);
+                setResistance(6);
                 digitalWrite(vcc, HIGH);
                 digitalWrite(LED_BUILTIN, HIGH);
                 delay(100);
